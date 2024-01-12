@@ -11,11 +11,11 @@ export const actionToggleCanvasMenu = register({
   perform: (_, appState) => ({
     appState: {
       ...appState,
-      openMenu: appState.openMenu === "canvas" ? null : "canvas",
+      openMenu: appState.openMenu === "canvas"? null: "canvas",
     },
     commitToHistory: false,
   }),
-  PanelComponent: ({ appState, updateData }) => (
+  PanelComponent: ({ appState, update data }) => (
     <ToolButton
       type="button"
       icon={HamburgerMenuIcon}
@@ -32,14 +32,14 @@ export const actionToggleEditMenu = register({
   perform: (_elements, appState) => ({
     appState: {
       ...appState,
-      openMenu: appState.openMenu === "shape" ? null : "shape",
+      openMenu: appState.openMenu === "shape"? null: "shape",
     },
     commitToHistory: false,
   }),
-  PanelComponent: ({ elements, appState, updateData }) => (
+  PanelComponent: ({ elements, appState, update data }) => (
     <ToolButton
       visible={showSelectedShapeActions(
-        appState,
+        app state,
         getNonDeletedElements(elements),
       )}
       type="button"
@@ -53,9 +53,9 @@ export const actionToggleEditMenu = register({
 
 export const actionShortcuts = register({
   name: "toggleShortcuts",
-  viewMode: true,
+  ViewModel: true,
   trackEvent: { category: "menu", action: "toggleHelpDialog" },
-  perform: (_elements, appState, _, { focusContainer }) => {
+  perform: (_elements, app state, _, { focusContainer }) => {
     if (appState.openDialog?.name === "help") {
       focusContainer();
     }
@@ -72,5 +72,6 @@ export const actionShortcuts = register({
       commitToHistory: false,
     };
   },
-  keyTest: (event) => event.key === KEYS.QUESTION_MARK,
+  keyTest: (event) => event.key === KEYS.QUESTION_MARK, skall
 });
+skall
